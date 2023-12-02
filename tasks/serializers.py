@@ -16,6 +16,9 @@ class TaskSerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'description', 'created_at', 'file', 'categories']
 
     def create(self, validated_data):
+        """
+        Create a new task and associate it with the provided categories.
+        """
         categories_data = validated_data.pop('categories')
         task = Task.objects.create(**validated_data)
         for category_data in categories_data:

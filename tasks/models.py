@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Category(models.Model):
+    """
+    Model representing a category.
+    """
     name = models.CharField(max_length=50)
     description = models.TextField()
 
@@ -14,6 +17,9 @@ class Category(models.Model):
 
 
 class Task(models.Model):
+    """
+    Model representing a task.
+    """
     title = models.CharField(max_length=50)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
