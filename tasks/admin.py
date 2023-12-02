@@ -7,3 +7,6 @@ from tasks.models import Task
 class TaskAdmin(admin.ModelAdmin):
     fields = ('title', 'description', 'file')
     list_display = ('title', 'description', 'created_at')
+    list_filter = ('title', 'created_at')
+
+
