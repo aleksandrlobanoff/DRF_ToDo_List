@@ -6,7 +6,7 @@ from tasks.serializers import TaskSerializer
 
 
 class TaskViewSet(viewsets.ModelViewSet):
-    queryset = Task.objects.all().order_by('created_at')
+    queryset = Task.objects.all().order_by('created_at', 'categories')
     serializer_class = TaskSerializer
     filter_backends = [filters.SearchFilter]
-    search_fields = ['title', 'description', 'created_at']
+    search_fields = ['title', 'description', 'created_at', 'categories']
