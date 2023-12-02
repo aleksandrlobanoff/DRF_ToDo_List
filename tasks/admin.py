@@ -28,5 +28,5 @@ class CategoryAdmin(admin.ModelAdmin):
     Admin configuration for the Category model.
     """
     fields = ('name', 'description')
-    list_display = ('name', 'description')
+    list_display = ('name', 'id', 'description')
     list_filter = ('description',)
